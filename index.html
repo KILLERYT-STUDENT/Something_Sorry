@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#ff80ab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>I'm Sorry Kaju Katli 💗</title>
+    <meta name="description" content="A heartfelt sorry message for someone very special">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Sparkle particles -->
+    <div class="sparkles-container" id="sparklesContainer"></div>
+
+    <!-- Main App Container -->
+    <div class="app-container">
+        
+        <!-- SLIDE 0: Opening / Landing -->
+        <div class="slide active" id="slide-0">
+            <div class="slide-content entrance-slide">
+                <div class="kuchu-puchu-art entrance-art">
+                    <div class="emoji-pair">
+                        <span class="emoji bounce-left">🐻</span>
+                        <span class="emoji-heart pulse">💗</span>
+                        <span class="emoji bounce-right">🐼</span>
+                    </div>
+                </div>
+                <h1 class="main-title">
+                    <span class="title-line">Hey</span>
+                    <span class="title-line highlight">Kaju Katli</span>
+                    <span class="title-line small">I have something to say...</span>
+                </h1>
+                <button class="btn-next glow-btn" onclick="nextSlide()">
+                    <span>Open Karo Na 🥺</span>
+                    <div class="btn-sparkle"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- SLIDE 1: The Sorry -->
+        <div class="slide" id="slide-1">
+            <div class="slide-content">
+                <div class="kuchu-puchu-art">
+                    <div class="sad-emoji-scene">
+                        <span class="big-emoji sad-bear wobble">🐻</span>
+                        <div class="tear tear-1">💧</div>
+                        <div class="tear tear-2">💧</div>
+                    </div>
+                </div>
+                <h2 class="sorry-text">
+                    I'm Really <span class="highlight-word">Sorry</span> Pgl 😔
+                </h2>
+                <p class="message-text">
+                    Mujhe pata hai maine galti ki hai... <br>
+                    Tere se na baat kar ke mn nhi lg rha💔
+                </p>
+                <button class="btn-next soft-btn" onclick="nextSlide()">
+                    Aage Dekho →
+                </button>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: Missing You -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <div class="kuchu-puchu-art">
+                    <div class="emoji-scene missing-scene">
+                        <span class="big-emoji float-slow">🐻</span>
+                        <span class="dots-between">• • •</span>
+                        <span class="big-emoji float-slow delay">🐼</span>
+                    </div>
+                </div>
+                <h2 class="slide-title">Tujhse Baat Na Karke...</h2>
+                <p class="message-text">
+                    Pata hai Kaju Katli, tere bina sab boring hai 😢<br>
+                    Na koi hasaane wala hai, na koi sunne wala... <br>
+                    <span class="highlight-text">Tu meri Pgl! hai Yrr 🥺💕</span>
+                </p>
+                <button class="btn-next soft-btn" onclick="nextSlide()">
+                    Aur Suno →
+                </button>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Fun Question 1 -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content question-slide">
+                <div class="kuchu-puchu-art">
+                    <div class="emoji-scene">
+                        <span class="big-emoji puppy-eyes">🥺</span>
+                    </div>
+                </div>
+                <h2 class="question-title">Kaju Katli, ek baat bata...</h2>
+                <p class="question-text">Kya tu abhi bhi gussa hai? 😤</p>
+                <div class="options-container">
+                    <button class="option-btn" onclick="handleAnswer(this, 'Haww jhooth! Thoda toh gussa kam hua hoga 🤭', true)">
+                        Haan bohot gussa hun! 😤
+                    </button>
+                    <button class="option-btn" onclick="handleAnswer(this, 'Yayy! Toh maaf bhi kar do na 🥺💗', true)">
+                        Thoda sa... 😒
+                    </button>
+                </div>
+                <div class="answer-reveal" id="answer-3"></div>
+                <button class="btn-next soft-btn hidden" id="next-3" onclick="nextSlide()">
+                    Next Question →
+                </button>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Fun Question 2 -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content question-slide">
+                <div class="kuchu-puchu-art">
+                    <div class="emoji-scene">
+                        <span class="big-emoji thinking">🤔</span>
+                    </div>
+                </div>
+                <h2 class="question-title">Ek aur sawaal Pgl...</h2>
+                <p class="question-text">Kya tujhe meri yaad aayi? 🥺</p>
+                <div class="options-container">
+                    <button class="option-btn" onclick="handleAnswer(this, 'Dekha! Mujhe pata tha... Kyunki mujhe bhi teri bohot yaad aayi 🐻💗🐼', true)">
+                        Haan aayi... 😔
+                    </button>
+                    <button class="option-btn" onclick="handleAnswer(this, 'Jhoothi! Bilkul jhoothi! 😤 Mujhe pata hai tujhe yaad aayi 🤭💕', true)">
+                        Nahi bilkul nahi! 😤
+                    </button>
+                </div>
+                <div class="answer-reveal" id="answer-4"></div>
+                <button class="btn-next soft-btn hidden" id="next-4" onclick="nextSlide()">
+                    Aage →
+                </button>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Fun Question 3 -->
+        <div class="slide" id="slide-5">
+            <div class="slide-content question-slide">
+                <div class="kuchu-puchu-art">
+                    <div class="emoji-scene">
+                        <span class="big-emoji wiggle">🐼</span>
+                        <span class="small-heart pop">💗</span>
+                    </div>
+                </div>
+                <h2 class="question-title">Last Question Kaju Katli...</h2>
+                <p class="question-text">Kya tu mujhe maaf karegi? 🥺💗</p>
+                <div class="options-container">
+                    <button class="option-btn special-btn" onclick="handleAnswer(this, 'Yayyyy! 🎉💗 I promise aage se kabhi gussa nahi karungi/karunga! 🐻🐼', false)">
+                        Haan! Maaf kiya 💗
+                    </button>
+                    <button class="option-btn runaway-btn" id="runawayBtn" onmouseover="moveButton(this)" onclick="handleAnswer(this, 'Hehe button toh pakad! 😜 Maaf toh karna hi padega! 💕', false)">
+                        Nahi karungi! 😤
+                    </button>
+                </div>
+                <div class="answer-reveal" id="answer-5"></div>
+                <button class="btn-next soft-btn hidden" id="next-5" onclick="nextSlide()">
+                    Final Surprise →
+                </button>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Final Message -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content final-slide">
+                <div class="kuchu-puchu-art">
+                    <div class="emoji-scene final-scene">
+                        <span class="big-emoji hug-left">🐻</span>
+                        <span class="big-heart mega-pulse">💗</span>
+                        <span class="big-emoji hug-right">🐼</span>
+                    </div>
+                </div>
+                <h2 class="final-title">
+                    <span class="line1">Thank You</span>
+                    <span class="line2 highlight">Kaju Katli 💗</span>
+                </h2>
+                <p class="final-message">
+                    Tu meri sabse special friend hai Pgl 🥺<br>
+                    Chahe kuch bhi ho jaaye, <br>
+                    <strong>Main hamesha tere saath hun!</strong> 🐻💕🐼<br><br>
+                    <span class="promise-text">
+                        ✨ Promise — Aage se kabhi gussa nahi karunga! ✨
+                    </span>
+                </p>
+                <div class="final-emoji-rain" id="finalRain"></div>
+                <button class="btn-next glow-btn final-btn" onclick="replayFromStart()">
+                    Phir se dekho 🔄💗
+                </button>
+            </div>
+        </div>
+
+        <!-- Slide Progress Dots -->
+        <div class="progress-dots" id="progressDots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+            <span class="dot" data-slide="5"></span>
+            <span class="dot" data-slide="6"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
